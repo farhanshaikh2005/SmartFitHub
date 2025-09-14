@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Smart BMI & Calorie Counter</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  
+  <!-- Welcome Page -->
+  <section class="page active" id="welcomePage">
+    <div class="welcome-container">
+      <h1>✨ Welcome to Smart Health System ✨</h1>
+      <p>Track your BMI, Calories & get daily health tips!</p>
+      <button class="enter-btn" onclick="navigateTo('bmiPage')">
+        Enter ➡
+      </button>
+    </div>
+  </section>
+
+  <!-- BMI Page -->
+  <section class="page" id="bmiPage">
+    <h2>📊 BMI Calculator</h2>
+    <div class="form-box">
+      <input type="number" id="weight" placeholder="Enter weight (kg)">
+      <input type="number" id="height" placeholder="Enter height (cm)">
+      <button onclick="calculateBMI()">Calculate BMI</button>
+      <p id="bmiResult"></p>
+    </div>
+    <button class="back-btn" onclick="navigateTo('welcomePage')">⬅ Back</button>
+    <button class="next-btn" onclick="navigateTo('caloriePage')">Next ➡</button>
+  </section>
+
+  <!-- Calorie Counter Page -->
+  <section class="page" id="caloriePage">
+    <h2>🔥 Calorie Counter</h2>
+    <div class="form-box">
+      <input type="number" id="age" placeholder="Enter Age">
+      <select id="gender">
+        <option value="male">Male</option>
+        <option value="female">Female</option>
+      </select>
+      <input type="number" id="calWeight" placeholder="Enter Weight (kg)">
+      <input type="number" id="calHeight" placeholder="Enter Height (cm)">
+      <input type="number" id="activity" placeholder="Activity (1.2 - 1.9)">
+      <button onclick="calculateCalories()">Calculate Calories</button>
+      <p id="calorieResult"></p>
+    </div>
+    <button class="back-btn" onclick="navigateTo('bmiPage')">⬅ Back</button>
+    <button class="next-btn" onclick="navigateTo('tipPage')">Next ➡</button>
+  </section>
+
+  <!-- Daily Health Tip Page -->
+  <section class="page" id="tipPage">
+    <h2>🌿 Daily Health Tip</h2>
+    <div class="summary-box" id="tipBox">Loading tip...</div>
+    <button class="back-btn" onclick="navigateTo('caloriePage')">⬅ Back</button>
+    <button class="next-btn" onclick="navigateTo('welcomePage')">🏠 Home</button>
+  </section>
+
+  <script src="script.js"></script>
+</body>
+</html>
