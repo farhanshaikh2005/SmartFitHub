@@ -12,25 +12,43 @@
   <section id="welcome">
     <div class="welcome-container">
       <h1>Welcome to Smart BMI & Calorie Counter</h1>
-      <button class="glow-btn" onclick="enterApp()">
-  Enter <span class="arrow">→</span>
-</button>
-
+      <button class="glow-btn" onclick="enterApp()">Enter App →</button>
     </div>
   </section>
 
   <!-- Main App -->
   <section id="app" style="display:none;">
     <h1>Smart Health System</h1>
-    <button class="back-btn" onclick="goBack()">
-  <span>&larr;</span>
-</button>
+    <button class="back-btn" onclick="goBack()">← Go Back</button>
+
+    <div>
+      <h2>BMI Calculator</h2>
+      <input type="number" id="weight" placeholder="Enter weight (kg)">
+      <input type="number" id="height" placeholder="Enter height (cm)">
+      <button onclick="calculateBMI()">Check BMI</button>
+      <p id="bmiResult"></p>
+    </div>
+
+    <div>
+      <h2>Food Calories</h2>
+      <input type="text" id="foodName" placeholder="Enter food name">
+      <input type="number" id="foodQty" placeholder="Quantity (grams)">
+      <button onclick="addFood()">Add Food</button>
+      <p id="foodResult"></p>
+    </div>
+
+    <div>
+      <h2>Exercise Calories</h2>
+      <input type="text" id="exerciseName" placeholder="Exercise name">
+      <input type="number" id="exerciseTime" placeholder="Minutes">
+      <button onclick="addExercise()">Add Exercise</button>
+      <p id="exerciseResult"></p>
+    </div>
+
+    <h2>Total Calories</h2>
+    <p id="totalCalories"></p>
   </section>
 
-
-
-
- 
-
-
-
+  <script src="script.js"></script>
+</body>
+</html>
